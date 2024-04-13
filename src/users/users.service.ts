@@ -6,8 +6,9 @@ import { CreateUserDto } from './dtos/create-user.dto';
 
 @Injectable()
 export class UsersService {
-  constructor(@InjectRepository(User) private userRepository: Repository<User>) {}
-
+  constructor(
+    @InjectRepository(User) private userRepository: Repository<User>,
+  ) {}
 
   create(createUser: CreateUserDto) {
     const user = this.userRepository.create(createUser);
